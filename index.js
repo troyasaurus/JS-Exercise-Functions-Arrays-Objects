@@ -37,8 +37,12 @@ function addNumbers(num1, num2) {
 */
 
   /* code here */
-  return (sayGoodbye);
+  
+function sayGoodbye(name){
+  return "Goodbye, " + name + ". Have a great day."
 }
+  console.log(sayGoodbye("John"));
+
 
 /**
  * ### Challenge `temperatureCtoF`
@@ -54,8 +58,10 @@ function addNumbers(num1, num2) {
  * Hint 1: The formula for converting celsius to fahrenheit is t*9/5 + 32 where t is the temperature in celsius.
  * Hint 2: There is a very easy way to round numbers in JS. Do a google search to find out how. 
 */
-function temperatureCtoF(/* code here */) {
+function temperatureCtoF(celsiusNum) {
   /* code here */
+  let celFar = celsiusNum *9/5 + 32
+  return Math.round(celFar);
 }
 
 /**
@@ -75,8 +81,18 @@ function temperatureCtoF(/* code here */) {
  * 
  * Hint: You can call your `temperatureCtoF` function from inside `temperatureInF`.
 */
-function temperatureInF(/* code here */) {
+function temperatureInF(temp, unit) {
   /* code here */
+  if (unit === 'F'){
+    return temp + unit;
+  }else {
+    return temperatureCtoF(temp) + 'F';
+  }
+  
+
+
+
+
 }
 
 
@@ -96,10 +112,17 @@ function temperatureInF(/* code here */) {
  *   email: "leia@leia.com",
  * }
 */
-function makePersonObject(/* code here */) {
-  /* code here */
-}
+function makePersonObject(id, name, email) {
 
+  /* code here */
+  
+   return {
+    id:id, 
+    name: name, 
+    email: email
+  
+  };
+  }
 /**
  * ### Challenge `getName`
  * 
@@ -113,10 +136,11 @@ function makePersonObject(/* code here */) {
  * passing { id: 1, name: 'Leia', email: 'leia@leia.com` } as the argument,
  * the returned value should look like `Hello, my name is Leia`.
 */
-function getName(/* code here */) {
+function getName(obj) {
   /* code here */
+  return "Hello, my name is " + obj.name;
 }
-
+ 
 
 /**
  * ### Challenge `appleIndex`
@@ -133,8 +157,11 @@ function getName(/* code here */) {
  * passing in [ 'orange', 'grape', 'apple', 'banana', 'mango' ] as the argument,
  * the returned value should be: 2.
 */
-function appleIndex(/* code here */) {
+const fruits = [ 'orange', 'grape', 'apple', 'banana', 'mango' ];
+function appleIndex(fruits) {
   /* code here */
+
+  return fruits.indexOf ('apple');
 }
 
 /**
